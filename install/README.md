@@ -1,6 +1,6 @@
 # 🚀 CCPM Enhanced - 零基础安装指南
 
-[![Enhanced Version](https://img.shields.io/badge/Version-Enhanced-brightgreen)](https://github.com/your-username/ccpm-enhanced)
+[![Enhanced Version](https://img.shields.io/badge/Version-Enhanced-brightgreen)](https://github.com/zack744/CCPM-DIY)
 [![Cross Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)]()
 [![Beginner Friendly](https://img.shields.io/badge/Beginner-Friendly-green)]()
 
@@ -74,21 +74,21 @@
 1. **右键开始菜单** → 选择"Windows PowerShell（管理员）"
 2. **复制粘贴下面的命令**（一行搞定）：
 ```powershell
-iwr -useb https://raw.githubusercontent.com/your-username/ccpm-enhanced/main/install/install.bat -o install.bat; .\install.bat
+iwr -useb https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.bat -o install.bat; .\install.bat
 ```
 
 ### Windows用户 - 使用Git Bash（推荐）
 1. **右键桌面** → 选择"Git Bash Here"
 2. **复制粘贴下面的命令**：
 ```bash
-curl -sSL https://raw.githubusercontent.com/your-username/ccpm-enhanced/main/install/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.sh | bash
 ```
 
 ### Mac/Linux用户
 1. **打开终端**
 2. **复制粘贴下面的命令**：
 ```bash
-curl -sSL https://raw.githubusercontent.com/your-username/ccpm-enhanced/main/install/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.sh | bash
 ```
 
 ### 🎉 就是这么简单！
@@ -113,10 +113,10 @@ cd my-project
 ### 步骤2：下载安装器
 ```bash
 # 下载Windows版安装器
-curl -O https://raw.githubusercontent.com/your-username/ccpm-enhanced/main/install/install.bat
+curl -O https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.bat
 
 # 或下载Unix版安装器  
-curl -O https://raw.githubusercontent.com/your-username/ccpm-enhanced/main/install/install.sh
+curl -O https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.sh
 ```
 
 ### 步骤3：运行安装器
@@ -135,7 +135,7 @@ chmod +x install.sh
 
 ```bash
 # 克隆项目
-git clone https://github.com/your-username/ccpm-enhanced.git my-project
+git clone https://github.com/zack744/CCPM-DIY.git my-project
 cd my-project
 
 # 清理Git文件
