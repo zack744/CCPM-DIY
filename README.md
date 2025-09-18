@@ -382,25 +382,22 @@ Teams using this system report:
 
 ### Quick Setup (2 minutes)
 
-1. **Install this repository into your project**:
-
-   #### Unix/Linux/macOS
+1. **Clone this repository and copy to your project**:
 
    ```bash
-   cd path/to/your/project/
-   curl -sSL https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.sh | bash
-   # or: wget -qO- https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.sh | bash
+   # Clone the repository
+   git clone https://github.com/zack744/CCPM-DIY.git ccpm-temp
+   cd ccpm-temp
+   
+   # Copy the .claude directory to your project
+   cp -r .claude path/to/your/project/
+   
+   # (Optional) Clean up
+   cd ..
+   rm -rf ccpm-temp
    ```
 
-   #### Windows (PowerShell)
-   ```bash
-   cd path/to/your/project/
-   iwr -useb https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.bat | iex
-   ```
-   > ⚠️ **IMPORTANT**: If you already have a `.claude` directory, clone this repository to a different directory and copy the contents of the cloned `.claude` directory to your project's `.claude` directory.
-
-   See full/other installation options in the [installation guide ›](https://github.com/zack744/CCPM-DIY/tree/main/install)
-
+   > ⚠️ **IMPORTANT**: If you already have a `.claude` directory in your project, back it up first or copy specific files as needed.
 
 2. **Initialize the PM system**:
    ```bash
