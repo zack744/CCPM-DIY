@@ -13,6 +13,29 @@ Edit epic details after creation.
 
 ## Instructions
 
+### 0. Repository Protection Check
+
+Follow `/rules/github-operations.md` to ensure we're not editing epics in the CCPM template:
+
+```bash
+# Check if remote origin is the CCPM template repository
+remote_url=$(git remote get-url origin 2>/dev/null || echo "")
+if [[ "$remote_url" == *"zack744/CCPM-DIY"* ]] || [[ "$remote_url" == *"zack744/CCPM-DIY.git"* ]]; then
+  echo "❌ ERROR: You're trying to edit epics in the CCPM DIY template repository!"
+  echo ""
+  echo "This repository (zack744/CCPM-DIY) is a template for others to use."
+  echo "You should NOT edit epics here."
+  echo ""
+  echo "To fix this:"
+  echo "1. Fork this repository to your own GitHub account"
+  echo "2. Update your remote origin:"
+  echo "   git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_REPO.git"
+  echo ""
+  echo "Current remote: $remote_url"
+  exit 1
+fi
+```
+
 ### 1. Read Current Epic
 
 Read `.claude/epics/$ARGUMENTS/epic.md`:

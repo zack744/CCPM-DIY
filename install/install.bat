@@ -9,8 +9,7 @@ REM 功能：在Windows环境下安全安装CCPM Enhanced
 REM 作者：CCPM Enhanced Project
 REM ============================================================================
 
-REM TODO: 替换为实际仓库地址
-set REPO_URL=https://github.com/your-username/ccpm-enhanced.git
+set REPO_URL=https://github.com/zack744/CCPM-DIY.git
 set SCRIPT_VERSION=1.0.0
 set INSTALL_DIR=.
 set BACKUP_DIR=
@@ -198,6 +197,21 @@ if exist ".git" rmdir /s /q .git >nul 2>&1
 if exist ".gitignore" del /q .gitignore >nul 2>&1
 if exist "install" rmdir /s /q install >nul 2>&1
 echo ✅ Git文件清理完成
+echo.
+
+:cleanup_docs
+echo 🔍 清理文档文件...
+if exist "README.md" del /q "README.md" >nul 2>&1
+if exist "README_CN.md" del /q "README_CN.md" >nul 2>&1
+if exist "AGENTS.md" del /q "AGENTS.md" >nul 2>&1
+if exist "AGENTS-CN.md" del /q "AGENTS-CN.md" >nul 2>&1
+if exist "COMMANDS.md" del /q "COMMANDS.md" >nul 2>&1
+if exist "COMMANDS-CN.md" del /q "COMMANDS-CN.md" >nul 2>&1
+if exist "DEVELOPMENT_LOG.md" del /q "DEVELOPMENT_LOG.md" >nul 2>&1
+if exist "LICENSE" del /q "LICENSE" >nul 2>&1
+if exist "screenshot.webp" del /q "screenshot.webp" >nul 2>&1
+if exist "使用建议.md" del /q "使用建议.md" >nul 2>&1
+echo ✅ 文档文件清理完成 - 用户只获得.claude工作目录
 echo.
 
 :create_version_file

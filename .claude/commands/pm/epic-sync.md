@@ -32,10 +32,10 @@ Follow `/rules/github-operations.md` to ensure we're not syncing to the CCPM tem
 ```bash
 # Check if remote origin is the CCPM template repository
 remote_url=$(git remote get-url origin 2>/dev/null || echo "")
-if [[ "$remote_url" == *"automazeio/ccpm"* ]] || [[ "$remote_url" == *"automazeio/ccpm.git"* ]]; then
-  echo "❌ ERROR: You're trying to sync with the CCPM template repository!"
+if [[ "$remote_url" == *"zack744/CCPM-DIY"* ]] || [[ "$remote_url" == *"zack744/CCPM-DIY.git"* ]]; then
+  echo "❌ ERROR: You're trying to sync with the CCPM DIY template repository!"
   echo ""
-  echo "This repository (automazeio/ccpm) is a template for others to use."
+  echo "This repository (zack744/CCPM-DIY) is a template for others to use."
   echo "You should NOT create issues or PRs here."
   echo ""
   echo "To fix this:"

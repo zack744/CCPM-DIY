@@ -2,14 +2,14 @@
 
 [![Automaze](https://img.shields.io/badge/By-automaze.io-4b3baf)](https://automaze.io)
 &nbsp;
-[![Claude Code](https://img.shields.io/badge/+-Claude%20Code-d97757)](https://github.com/automazeio/ccpm/blob/main/README.md)
-[![GitHub Issues](https://img.shields.io/badge/+-GitHub%20Issues-1f2328)](https://github.com/automazeio/ccpm)
+[![Claude Code](https://img.shields.io/badge/+-Claude%20Code-d97757)](https://github.com/zack744/CCPM-DIY/blob/main/README.md)
+[![GitHub Issues](https://img.shields.io/badge/+-GitHub%20Issues-1f2328)](https://github.com/zack744/CCPM-DIY)
 &nbsp;
-[![MIT License](https://img.shields.io/badge/License-MIT-28a745)](https://github.com/automazeio/ccpm/blob/main/LICENSE)
+[![MIT License](https://img.shields.io/badge/License-MIT-28a745)](https://github.com/zack744/CCPM-DIY/blob/main/LICENSE)
 &nbsp;
 [![Follow on 𝕏](https://img.shields.io/badge/𝕏-@aroussi-1c9bf0)](http://x.com/intent/follow?screen_name=aroussi)
 &nbsp;
-[![Star this repo](https://img.shields.io/badge/★-Star%20this%20repo-e7b10b)](https://github.com/automazeio/ccpm)
+[![Star this repo](https://img.shields.io/badge/★-Star%20this%20repo-e7b10b)](https://github.com/zack744/CCPM-DIY)
 
 ### Claude Code workflow to ship ~~faster~~ _better_ using spec-driven development, GitHub issues, Git worktrees, and mutiple AI agents running in parallel.
 
@@ -388,18 +388,18 @@ Teams using this system report:
 
    ```bash
    cd path/to/your/project/
-   curl -sSL https://raw.githubusercontent.com/automazeio/ccpm/main/ccpm.sh | bash
-   # or: wget -qO- https://raw.githubusercontent.com/automazeio/ccpm/main/ccpm.sh | bash
+   curl -sSL https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.sh | bash
+   # or: wget -qO- https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.sh | bash
    ```
 
    #### Windows (PowerShell)
    ```bash
    cd path/to/your/project/
-   iwr -useb https://raw.githubusercontent.com/automazeio/ccpm/main/ccpm.bat | iex
+   iwr -useb https://raw.githubusercontent.com/zack744/CCPM-DIY/main/install/install.bat | iex
    ```
    > ⚠️ **IMPORTANT**: If you already have a `.claude` directory, clone this repository to a different directory and copy the contents of the cloned `.claude` directory to your project's `.claude` directory.
 
-   See full/other installation options in the [installation guide ›](https://github.com/automazeio/ccpm/tree/main/install)
+   See full/other installation options in the [installation guide ›](https://github.com/zack744/CCPM-DIY/tree/main/install)
 
 
 2. **Initialize the PM system**:
@@ -473,7 +473,7 @@ Claude Code PM was developed at [Automaze](https://automaze.io) **for developers
 
 If Claude Code PM helps your team ship better software:
 
-- ⭐ **[Star this repository](https://github.com/automazeio/ccpm)** to show your support
+- ⭐ **[Star this repository](https://github.com/zack744/CCPM-DIY)** to show your support
 - 🐦 **[Follow @aroussi on X](https://x.com/aroussi)** for updates and tips
 
 
@@ -487,4 +487,4 @@ If Claude Code PM helps your team ship better software:
 
 ## Star History
 
-![Star History Chart](https://api.star-history.com/svg?repos=automazeio/ccpm)
+![Star History Chart](https://api.star-history.com/svg?repos=zack744/CCPM-DIY)

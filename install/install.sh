@@ -11,7 +11,7 @@
 set -e  # 遇到错误立即退出
 
 # 全局变量
-REPO_URL="https://github.com/your-username/ccpm-enhanced.git"  # TODO: 替换为实际仓库地址
+REPO_URL="https://github.com/zack744/CCPM-DIY.git"
 SCRIPT_VERSION="1.0.0"
 INSTALL_DIR="."
 BACKUP_DIR=""
@@ -308,6 +308,24 @@ cleanup_git_files() {
     log_info "Git文件清理完成"
 }
 
+cleanup_docs() {
+    log_step "清理文档文件..."
+    
+    # 删除文档文件（用户只需要.claude文件夹）
+    rm -f README.md 2>/dev/null || true
+    rm -f README_CN.md 2>/dev/null || true
+    rm -f AGENTS.md 2>/dev/null || true
+    rm -f AGENTS-CN.md 2>/dev/null || true
+    rm -f COMMANDS.md 2>/dev/null || true
+    rm -f COMMANDS-CN.md 2>/dev/null || true
+    rm -f DEVELOPMENT_LOG.md 2>/dev/null || true
+    rm -f LICENSE 2>/dev/null || true
+    rm -f screenshot.webp 2>/dev/null || true
+    rm -f 使用建议.md 2>/dev/null || true
+    
+    log_info "文档文件清理完成 - 用户只获得.claude工作目录"
+}
+
 create_version_file() {
     log_step "创建版本信息..."
     
@@ -412,6 +430,7 @@ main() {
     # 执行安装
     download_project || exit 1
     cleanup_git_files
+    cleanup_docs
     create_version_file
     
     echo ""
