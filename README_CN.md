@@ -1,3 +1,10 @@
+## 🌐 语言选择 / Language Selection
+
+[![English](https://img.shields.io/badge/English-README.md-blue?style=for-the-badge)](./README.md)
+[![中文](https://img.shields.io/badge/中文-README_CN.md-red?style=for-the-badge)](./README_CN.md)
+
+---
+
 # Claude Code PM
 
 [![Automaze](https://img.shields.io/badge/By-automaze.io-4b3baf)](https://automaze.io)
