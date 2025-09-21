@@ -362,7 +362,7 @@ generate_team_insights() {
 
 output_human() {
     # 生成实时时间戳
-    REAL_DATETIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    REAL_DATETIME=$(TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00")
     TODAY_DATE=$(date '+%Y-%m-%d')
     
     echo "📅 Daily Standup Report"
@@ -514,7 +514,7 @@ output_human() {
 
 output_json() {
     # 生成实时时间戳
-    REAL_DATETIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    REAL_DATETIME=$(TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00")
     TODAY_DATE=$(date '+%Y-%m-%d')
     
     # 分析数据
@@ -617,7 +617,7 @@ main() {
     # 验证项目结构
     if ! validate_structure; then
         if [ "$OUTPUT_MODE" = "json" ]; then
-            echo '{"error": "Invalid CCPM directory structure", "timestamp": "'$(date -u +'%Y-%m-%dT%H:%M:%SZ')'"}' 
+            echo '{"error": "Invalid CCPM directory structure", "timestamp": "'$(TZ='Asia/Shanghai' date +'%Y-%m-%dT%H:%M:%S+08:00')'"}' 
         else
             log_error "无效的CCPM目录结构"
             echo ""

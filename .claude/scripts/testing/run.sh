@@ -293,7 +293,7 @@ build_test_command() {
 
 output_json_config() {
     local target="$1"
-    local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    local timestamp=$(TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00")
     
     cat << EOF
 {
@@ -312,7 +312,7 @@ EOF
 
 output_json_error() {
     local error_message="$1"
-    local timestamp=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    local timestamp=$(TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00")
     
     cat << EOF
 {

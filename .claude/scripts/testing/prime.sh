@@ -73,7 +73,7 @@ init_script() {
     
     # 获取真实时间戳（按照指令要求）
     if command -v date >/dev/null 2>&1; then
-        REAL_DATETIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ" 2>/dev/null)
+        REAL_DATETIME=$(TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00" 2>/dev/null)
         if [[ -z "$REAL_DATETIME" ]]; then
             # Windows兼容性
             REAL_DATETIME=$(date /t 2>/dev/null | tr -d '\r\n')

@@ -326,7 +326,7 @@ generate_recommendations() {
 
 output_human() {
     # 生成实时时间戳
-    REAL_DATETIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    REAL_DATETIME=$(TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00")
     
     # 获取Epic数据
     local epic_data=$(analyze_epic_metadata)
@@ -441,7 +441,7 @@ output_human() {
 
 output_json() {
     # 生成实时时间戳
-    REAL_DATETIME=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+    REAL_DATETIME=$(TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00")
     
     # 获取数据
     local epic_data=$(analyze_epic_metadata)
@@ -513,7 +513,7 @@ main() {
     # 验证Epic存在性
     if ! validate_epic; then
         if [ "$OUTPUT_MODE" = "json" ]; then
-            echo '{"error": "Epic not found: '"$EPIC_NAME"'", "timestamp": "'$(date -u +'%Y-%m-%dT%H:%M:%SZ')'"}'
+            echo '{"error": "Epic not found: '"$EPIC_NAME"'", "timestamp": "'$(TZ='Asia/Shanghai' date +'%Y-%m-%dT%H:%M:%S+08:00')'"}'
         fi
         exit 1
     fi
