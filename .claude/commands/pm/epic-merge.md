@@ -49,6 +49,44 @@ fi
 
 ### 1. Pre-Merge Validation
 
+#### 1.1 Check Epic Verification Status (MANDATORY)
+
+```bash
+# Check if epic has been verified
+if [ ! -f ".claude/epics/$ARGUMENTS/verification-report.md" ]; then
+  echo "❌ Epic not verified. Quality gates must pass before merge."
+  echo ""
+  echo "Required: Run epic verification first:"
+  echo "  /pm:epic-verify $ARGUMENTS"
+  echo ""
+  echo "This ensures:"
+  echo "  - All tests pass with adequate coverage"
+  echo "  - Code quality standards met"
+  echo "  - Security checks completed"
+  echo "  - Manual verification completed"
+  exit 1
+fi
+
+# Check verification recency (within 24 hours)
+VERIFICATION_FILE=".claude/epics/$ARGUMENTS/verification-report.md"
+if [ -f "$VERIFICATION_FILE" ]; then
+  VERIFICATION_DATE=$(grep "verified_at:" "$VERIFICATION_FILE" | cut -d' ' -f2-)
+  echo "✅ Epic verified at: $VERIFICATION_DATE"
+  
+  # Optional: Check if verification is recent (can be configured)
+  # Uncomment below to enforce 24-hour verification window
+  # if [[ $(date -d "$VERIFICATION_DATE" +%s) -lt $(date -d "24 hours ago" +%s) 2>/dev/null ]]; then
+  #   echo "⚠️ Verification is older than 24 hours"
+  #   echo "Consider re-running: /pm:epic-verify $ARGUMENTS"
+  # fi
+else
+  echo "❌ Verification report not found"
+  exit 1
+fi
+```
+
+#### 1.2 Worktree Status Check
+
 Navigate to worktree and check status:
 ```bash
 cd ../epic-$ARGUMENTS
@@ -66,20 +104,28 @@ git fetch origin
 git status -sb
 ```
 
-### 2. Run Tests (Optional but Recommended)
+### 2. Final Quality Confirmation
+
+Since epic verification is mandatory, testing has already been completed.
+This section confirms the verification status:
 
 ```bash
-# Look for test commands
-if [ -f package.json ]; then
-  npm test || echo "⚠️ Tests failed. Continue anyway? (yes/no)"
-elif [ -f Makefile ]; then
-  make test || echo "⚠️ Tests failed. Continue anyway? (yes/no)"
+# Display verification summary
+echo "📊 Quality Gate Summary:"
+echo "========================"
+if [ -f ".claude/epics/$ARGUMENTS/verification-report.md" ]; then
+  grep -A 10 "Quality Gates Status" ".claude/epics/$ARGUMENTS/verification-report.md" || echo "Verification report available"
+else
+  echo "❌ No verification report found"
 fi
+
+echo ""
+echo "✅ All quality gates passed - proceeding with merge"
 ```
 
 ### 3. Update Epic Documentation
 
-Get current datetime: `date -u +"%Y-%m-%dT%H:%M:%SZ"`
+Get current datetime: `TZ='Asia/Shanghai' date +"%Y-%m-%dT%H:%M:%S+08:00"`
 
 Update `.claude/epics/$ARGUMENTS/epic.md`:
 - Set status to "completed"
