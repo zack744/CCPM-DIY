@@ -217,8 +217,11 @@ git commit -m "Issue #1235: Use new types"
 
 ### Completing Work
 ```bash
-1. Final commit for stream
-2. Update stream-{X}.md with "completed"
-3. Check if other streams need help
-4. Report completion
+1. Final commit for stream with clear summary
+2. Push changes to remote: git push origin epic/{name}
+3. Verify clean working tree: git status
+4. Update stream-{X}.md with "completed" status
+5. Include git status and push confirmation in completion report
+6. Check if other streams need help
+7. Report completion with verification details
 ```

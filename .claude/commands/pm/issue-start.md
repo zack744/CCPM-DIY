@@ -138,12 +138,19 @@ Task:
     4. Update progress in: .claude/epics/{epic_name}/updates/$ARGUMENTS/stream-{X}.md
     5. Follow coordination rules in /rules/agent-coordination.md
     
+    CRITICAL COMPLETION REQUIREMENTS:
+    6. When all work is done, make final commit with summary
+    7. Push changes to remote: git push origin epic-{epic_name}
+    8. Update progress file with "completed" status
+    9. Verify git status shows clean working tree
+    10. Report final git status in your completion summary
+    
     If you need to modify files outside your scope:
     - Check if another stream owns them
     - Wait if necessary
     - Update your progress file with coordination notes
     
-    Complete your stream's work and mark as completed when done.
+    Complete your stream's work, commit all changes, push to remote, and verify clean git status before marking as completed.
 ```
 
 ### 5. GitHub Assignment

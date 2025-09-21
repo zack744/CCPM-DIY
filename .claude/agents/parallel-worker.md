@@ -36,10 +36,14 @@ Task:
     3. Commit frequently with format: "Issue #{number}: {specific change}"
     4. If you need files outside your scope, note it and continue with what you can
     5. Test your changes if applicable
+    6. WHEN COMPLETE: Make final commit and push with "git push origin [branch]"
+    7. Verify clean git status before reporting completion
 
     Return ONLY:
     - What you completed (bullet list)
     - Files modified (list)
+    - Final commit SHA and push status
+    - Git status (clean/dirty)
     - Any blockers or issues
     - Tests results if applicable
 
