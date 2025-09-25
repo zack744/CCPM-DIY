@@ -1,0 +1,16 @@
+{
+  "name": "Qwen Code Terminal Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "postCreateCommand": "npm install -g @qwen-code/qwen-code@latest && echo 'Qwen Code installed!'",
+  "remoteEnv": {
+    "OPENAI_API_KEY": "${localEnv:OPENAI_API_KEY}",
+    "OPENAI_BASE_URL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+    "OPENAI_MODEL": "qwen3-coder"
+  },
+  "postStartCommand": "qwen --version"
+}
